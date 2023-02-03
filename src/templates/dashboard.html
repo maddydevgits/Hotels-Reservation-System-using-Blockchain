@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+            body{
+	            height:700px;
+	            background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
+            }
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Home</title>
+    </head>
+    <body align=center>
+
+	    <font face="Arial Black">
+		    <center>
+		        <table border="1" cellspacing="2" cellpadding="5" width="100%">
+                <tr>
+		        <td colspan="4" >
+                    <center>
+                        <font size="8">
+                            <marquee width="100%" bgcolor="HoneyDew">
+                                Design And Implementation Of Hotel Reservation System Using Python And PHP
+                            </marquee>
+                        </font>
+                    </center>
+                </td>
+                </tr>
+		        <tr>
+		            <td><center><a href="/dashboard">Home</a></center></td>
+		            <td><center><a href="/requestroom">Request Room</a></center></td>
+		            <td><center><a href="/logout">Logout</a></center></td>
+		        </tr>
+		        </table>
+		    </center>
+	    </font>
+        <br/><br/>
+	    <div class="container center">
+            <table class="table border">
+                <tr>
+                    <th>SNo</th>
+                    <th>Room Req ID</th>
+                    <th>Customer Wallet Address</th>
+                    <th>No of Adults</th>
+                    <th>No of days</th>
+                    <th>No of Rooms</th>
+                    <th>Booking Date</th>
+                    <th>Room Ids</th>
+                </tr>
+                {%for i in range(0,l)%}
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{dashboard_data[i][0]}}</td>
+                        <td>{{dashboard_data[i][1]}}</td>
+                        <td>{{dashboard_data[i][2]}}</td>
+                        <td>{{dashboard_data[i][3]}}</td>
+                        <td>{{dashboard_data[i][4]}}</td>
+                        <td>{{dashboard_data[i][5]}}</td>
+                        <td>{{dashboard_data[i][6]}}</td>
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </body>
+</html>
